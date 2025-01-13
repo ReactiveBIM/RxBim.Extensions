@@ -1,6 +1,6 @@
 ﻿<Project>
     <PropertyGroup>
-        <Version>4.0.1-dev001</Version>
+        <Version>4.0.1-lc004</Version>
         <TargetFramework>net472</TargetFramework>
         <PlatformTarget>x64</PlatformTarget>
         <LangVersion>12</LangVersion>
@@ -11,7 +11,7 @@
     <PropertyGroup>
         <SolutionDir>$(MSBuildThisFileDirectory)</SolutionDir>
     </PropertyGroup>
-    
+
     <Choose>
         <When Condition="!$(MSBuildProjectName.Contains('Tests')) AND !$(MSBuildProjectName.Contains('build'))">
             <PropertyGroup>
@@ -32,7 +32,7 @@
             </ItemGroup>
         </When>
     </Choose>
-    
+
     <ItemGroup>
         <PackageReference Condition=" '$(UseDi)' == 'true' " Include="RxBim.Di" Version="3.0.0"/>
     </ItemGroup>
@@ -90,7 +90,7 @@
 
     <Import Project="$([MSBuild]::GetPathOfFileAbove(RxBim.Build.Props, $(MSBuildProjectDirectory)))"
             Condition=" '$([MSBuild]::GetPathOfFileAbove(RxBim.Build.Props, $(MSBuildProjectDirectory)))' != '' AND $(NotRefenceApi) != true "/>
-    
+
     <PropertyGroup Condition="$(IsPackable) != false">
         <PackageId Condition="$(NotRefenceApi) == true">$(MSBuildProjectName)</PackageId>
         <PackageId Condition="$(NotRefenceApi) != true">$(MSBuildProjectName).$(ApplicationVersion)</PackageId>
