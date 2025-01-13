@@ -16,6 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\RxBim.Tools.TableBuilder\RxBim.Tools.TableBuilder.csproj" />
-  </ItemGroup>  
+  </ItemGroup>
 
 </Project>

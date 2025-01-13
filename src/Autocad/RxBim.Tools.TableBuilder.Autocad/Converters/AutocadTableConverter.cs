@@ -68,8 +68,6 @@
                         case CellContent<object> valueData:
                             acadCell.Value = valueData.Value;
                             break;
-                        default:
-                            throw new ArgumentOutOfRangeException($"Undefined cell data type '{cellData.Content}'.");
                     }
                 }
             }
